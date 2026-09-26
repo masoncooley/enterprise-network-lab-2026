@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="assets/network_topology_diagram.png" width="700">
+</p>
 
 # Enterprise Network Infrastructure Lab
 
