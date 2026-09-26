@@ -19,3 +19,4 @@ We will:
 
 ## Table of Contents:
 - [Design and Initial Config](design_initialConfig.md)
+- [VLANs & Trunking](vlans_and_trunking.md)
