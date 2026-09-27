@@ -81,3 +81,7 @@
   - Ask me how I know :(
   - To write changes: `write memory` or `copy running-config startup-config`
   - To view config: `show running-config` or `show startup-config`
+
+---
+
+**Go to next page: [VLANs and Trunking](vlans_and_trunking.md)**
