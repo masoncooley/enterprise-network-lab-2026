@@ -6,4 +6,4 @@
 
 ---
 
-**Go to next page: [Security and SSH]security_and_ssh.md)**
+**Go to next page: [Security and SSH](security_and_ssh.md)**
