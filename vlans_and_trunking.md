@@ -109,3 +109,8 @@ Now that the physical topology and initial device configuration are complete, VL
     - The VLANs are carried across the trunk links
     - Core-SW1's SVIs are operational
     - Core-SW1 is performing inter-VLAN routing
+
+
+---
+
+**Go to next page: [DHCP and DNS](dhcp_and_dns.md)**
