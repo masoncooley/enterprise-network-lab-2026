@@ -18,5 +18,5 @@ We will:
 - Test and troubleshoot network connectivity
 
 ## Table of Contents:
-- [Design and Initial Config](design_initialConfig.md)
+- [Network Design and Configuration](networkDesign_config.md)
 - [VLANs & Trunking](vlans_and_trunking.md)
