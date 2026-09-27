@@ -6,11 +6,18 @@
 - Departments: Management, Sales, Accounting, IT
 
 ## Network Design
-- IP addressing scheme:
+- The network uses separate address spaces for the Main and Branch Offices:
   - Main Office: `10.10.0.0/16`
   - Branch Office: `10.20.0.0/16`
-  
-> **The /16 networks are used as site-level address spaces, with individual /24 subnets allocated to each VLAN**
+- Each office receives a `/16` address space to allow for further division into per-department subnets
+- Each department/VLAN within an office has a dedicated `/24` address space
+  - This gives each department its own L2 broadcast domain while leaving room for additional hosts within each department
+- Router to Router and Router to Core-SW1 links use `/30` subnets, creating point-to-point Layer 3 links with 2 usable addresses
+  - ***Ex:***     R1 `10.10.254.1/30` <----> Core-SW1 `10.10.254.2/30`
+- Core-SW1 is a Layer 3 switch that performs inter-VLAN routing for the Main Office using switched virtual interfaces (SVIs).
+  - Each SVI serves as the default gateway for its corresponding VLAN
+- External interfaces for each router (and the remote server) use documentation-reserved addresses ([outlined in RFC 5737](https://www.rfc-editor.org/info/rfc5737/)) instead of public addresses in an effort to reduce confusion
+- A remote server (`192.0.2.2`) is connected to the ISP router as a way to simulate the public internet
 
 ### VLAN Table
 | VLAN # |          Name           |     Network    | Core SVI / Gateway |
@@ -42,8 +49,6 @@
 > **Note:** The R2-to-SW3 connection is an 802.1Q trunk rather than a routed Layer 3 link. R2 uses subinterfaces for VLAN 110 and VLAN 120 to provide inter-VLAN routing at the branch.
 
 
-
-
 ## Initial Configuration: 
 - Create logical network topology in Cisco Packet Tracer *(refer to network_topology_diagram.png)*
 - Set hostname for each device with `hostname [name]`
@@ -66,5 +71,13 @@
       CORE-SW1(config-if)#ip address 10.10.254.2 255.255.255.252
       CORE-SW1(config-if)#no shutdown 
       ```
-- Configure basic switch management settings
-  - 
+- Configure basic router/switch management settings (**on every network device**)
+  - Enable password protection
+    - `enable secret <password>`
+
+
+## Important Note:
+- ### Please save your config after making changes or bad stuff will happen
+  - Ask me how I know :(
+  - To write changes: `write memory` or `copy running-config startup-config`
+  - To view config: `show running-config` or `show startup-config`
