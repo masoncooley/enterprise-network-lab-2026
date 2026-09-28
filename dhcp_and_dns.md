@@ -17,4 +17,4 @@ Both the DHCP and DNS service will be hosted on `MAIN-SERVER`
 
 ---
 
-**Go to next page: [OSPF Configuration](ospf.md)**
+**Go to next page: [Security and SSH](security_and_ssh.md)**
