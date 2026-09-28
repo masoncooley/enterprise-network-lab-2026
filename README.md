@@ -11,8 +11,9 @@ We will:
 - Create the physical network topology
 - Configure IP address scheme, VLANs and 802.1Q trunking
 - Configure inter-VLAN routing
-- Configure DHCP and DNS services
 - Configure OSPF for dynamic routing
+- Configure static routing
+- Configure DHCP and DNS services
 - Configure ACLs to control traffic between VLANs
 - Configure basic switch security and SSH management
 - Test and troubleshoot network connectivity
@@ -20,3 +21,6 @@ We will:
 ## Table of Contents:
 - [Network Design and Configuration](networkDesign_config.md)
 - [VLANs & Trunking](vlans_and_trunking.md)
+- [OSPF and Static Routing](ospf_and_static_routing.md)
+- [DHCP and DNS](dhcp_and_dns.md)
+- [Security and SSH](security_and_ssh.md)
