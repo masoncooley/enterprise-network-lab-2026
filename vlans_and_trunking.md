@@ -113,4 +113,4 @@ Now that the physical topology and initial device configuration are complete, VL
 
 ---
 
-**Go to next page: [DHCP and DNS](dhcp_and_dns.md)**
+**Go to next page: [OSPF and Static Routing](ospf_and_static_routing.md)**
